@@ -5,11 +5,12 @@ const EventsPage = () => {
   const clients = [
     { id: "react-meetup", name: "React meet up" },
     { id: "css-meetup", name: "css meet up" },
+    { id: "mongo-meetup", name: "mongodb meet up" },
   ];
 
   return (
     <div>
-      <h1>Events page</h1>
+      <h1>All Events page</h1>
       <ul>
         {clients.map((event) => (
           <li key={event.id}>
