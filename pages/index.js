@@ -3,7 +3,6 @@ import EventList from "../components/events/EventList";
 import { getFeaturedEvents } from "../helpers/api-util";
 
 const HomePage = (props) => {
-  console.log(props.events);
   return (
     <div>
       <ul>
