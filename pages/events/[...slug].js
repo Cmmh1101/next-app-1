@@ -1,6 +1,5 @@
-import { useRouter, useEffect, useState } from "next/router";
-import React from "react";
-import { getFilteredEvents } from "../../helpers/api-util";
+import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 import EventList from "../../components/events/EventList";
 import ResultsTitle from "../../components/events/results-title";
 import Button from "../../components/ui/button";
@@ -31,9 +30,9 @@ const FilteredEventsPage = (props) => {
     }
   }, [data]);
 
-  if (!loadedEvents) {
-    return <p className="center">Loading...</p>;
-  }
+  // if (!loadedEvents) {
+  //   return <p className="center">Loading...</p>;
+  // }
 
   const filteredYear = filteredData[0];
   const filteredMonth = filteredData[1];
@@ -62,7 +61,7 @@ const FilteredEventsPage = (props) => {
     );
   }
 
-  const filteredEvents = allEvents.filter((event) => {
+  const filteredEvents = loadedEvents.filter((event) => {
     const eventDate = new Date(event.date);
     return (
       eventDate.getFullYear() === numYear &&
