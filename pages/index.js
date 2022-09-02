@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import EventList from "../components/events/EventList";
 import { getFeaturedEvents } from "../helpers/api-util";
@@ -5,9 +6,11 @@ import { getFeaturedEvents } from "../helpers/api-util";
 const HomePage = (props) => {
   return (
     <div>
-      <ul>
-        <EventList items={props.events} />
-      </ul>
+      <Head>
+        <title>Next js events</title>
+        <meta name="description" content="find great next js events here" />
+      </Head>
+      <EventList items={props.events} />
     </div>
   );
 };
